@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ominfood</title>
+   <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+/* 
+      MAIN COLOR: #e67e22
+      tint::#cf711f
+      light:#fdf2e9
+
+      GREY COLOR: #333,#555
+      */
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #fdf;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  color: #333;
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+.grid {
+  display: grid;
+  column-gap: 9.6rem;
+  row-gap: 12.8rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 6.4rem;
+}
+
+.grid-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.btn,
+.btn:link,
+.btn:visited {
+  font-size: 2rem;
+  padding: 1.8rem 3.2rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  transition: all 0.6s;
+  display: inline-block;
+  color: #fff;
+  background-color: #e67e22;
+}
+.btn:hover,
+.btn:active {
+  background-color: #cf711f;
+}
+
+.secondary-heading {
+  font-size: 4.4rem;
+  letter-spacing: -0.8px;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  display: block;
+  color: #cf711f;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.15px;
+  margin-bottom: 1.6rem;
+}
+.teritary-heading {
+  font-size: 3rem;
+  margin-bottom: 2.4rem;
+}
+.quaternary-heading {
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.centering {
+  text-align: center;
+}
+.margin-buttom-md {
+  margin-bottom: 4.8rem;
+}
+.margin-buttom-sm {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+.tag {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 1.2rem;
+  border-radius: 0.8rem;
+  padding: 0.4rem 0.8rem;
+}
+.sticky .nav {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1.8rem 3.2rem;
+  width: 100%;
+  position: fixed !important;
+  z-index: 2;
+  box-shadow: 0 1.2rem 2.4rem 0 rgb(0, 0, 0, 0.04);
+  backdrop-filter: blur(10px);
+}
+.sticky .open-nav {
+  backdrop-filter: none;
+}
+
+.sticky .hero-section {
+  margin-top: 6.6rem;
+}
+/* ########## header navagtion ######## */
+.nav {
+  background-color: #fdf2e9;
+  padding: 2.4rem 3.2rem 0;
+}
+.nav-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 125rem;
+}
+.navigation {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+}
+.logo-img {
+  height: 2.2rem;
+}
+.nav-link:link,
+.nav-link:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: #cf711f;
+}
+
+.btn--free:link,
+.btn--free:visited {
+  font-size: 1.8rem;
+  padding: 1.2rem 1.8rem;
+}
+.menu-icon,
+.close-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  display: none;
+  cursor: pointer;
+}
+
+/* #########  hero-section  ############ */
+
+.hero-section {
+  background-color: #fdf2e9;
+  padding: 8rem 3.2rem;
+  /* max-width: 140rem; */
+}
+
+.hero-inner-box {
+  margin: 0 auto;
+  max-width: 124rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+}
+.image-box img {
+  width: 100%;
+}
+.hero-text-box {
+  margin-top: 2.4rem;
+}
+.primary-heading {
+  font-size: 5.2rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+.hero--text {
+  color: #555;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+.hero-link-box {
+  display: flex;
+  gap: 1.8rem;
+  margin-bottom: 8rem;
+}
+.btn--main:link,
+.btn--main:visited {
+  font-weight: 600;
+}
+.btn--less:link,
+.btn--less:visited {
+  background-color: #fff;
+  color: #343a40;
+}
+.btn--less:hover,
+.btn--less:active {
+  background-color: #fdf2e9;
+  color: #333;
+  box-shadow: 0 0 0 1px #e67e22;
+}
+.customer-photos {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.cust-photos {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.8rem;
+  border: 0.3rem solid #fdf2e9;
+}
+
+.cust-photos:last-child {
+  margin: 0;
+}
+.number {
+  color: #cf711f;
+}
+.photo-text {
+  color: #555;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* ########Featured########### */
+
+.featured-section {
+  padding: 4.8rem 3.2rem;
+}
+
+.featured-heading {
+  color: #888;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+.featured-list {
+  display: flex;
+  gap: 4.8rem;
+  justify-content: center;
+}
+.feature-img {
+  filter: brightness(0);
+  opacity: 0.5;
+  height: 3.2rem;
+}
+
+/* ##################how-section####################### */
+.how-section {
+  /* background-color: #fdf2e9; */
+  padding: 9.6rem 0rem;
+}
+
+.subheading-primeColor {
+  color: #cf711f;
+}
+.how-text {
+  align-self: center;
+}
+.how-number {
+  font-size: 8.6rem;
+  font-weight: 700;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+.how-text-discription {
+  font-size: 1.8rem;
+  color: #555;
+  line-height: 1.8;
+}
+.how-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.how-img {
+  width: 30%;
+}
+.how-img-box::before {
+  content: "";
+  display: block;
+  background-color: #fae5d3;
+  width: 37%;
+  padding-bottom: 37%;
+  position: absolute;
+  border-radius: 50%;
+  border: 2.9rem solid #fdf2e9;
+  z-index: -1;
+}
+/* ################### meals #################### */
+
+.meal-section {
+  /* background-color: #fdf2e9; */
+  padding: 9.6rem 0rem;
+}
+.meal--box {
+  box-shadow: 0 1.6rem 3.5rem 0 rgb(0, 0, 0, 0.08);
+  border-radius: 1.2rem;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.meal--box:hover {
+  transform: translateY(-1.2rem);
+}
+.meal-img {
+  max-width: 100%;
+}
+
+.tag--yellow {
+  margin-left: 0.8rem;
+  background-color: #ffd43b;
+}
+.tag--green {
+  background-color: #51cf66;
+}
+.meal-discription {
+  margin: 3.2rem 4.8rem;
+}
+.meal-heading {
+  font-size: 2.4rem;
+  margin-bottom: 3.2rem;
+}
+.details {
+  color: #555;
+  list-style: none;
+  display: flex;
+  font-size: 1.8rem;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 0 4.8rem 0.8rem;
+}
+.detail-2 {
+  gap: 2.4rem;
+  margin: 0 0 4.8rem 2.4rem;
+}
+
+.diet-heading {
+  font-size: 3rem;
+  margin-bottom: 3.2rem;
+}
+.meal-link:link,
+.meal-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #cf711f;
+  margin-top: 4.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid currentColor;
+}
+.meal-link:hover,
+.meal-link:active {
+  border-bottom: 1px solid transparent;
+}
+.details li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.svg-logo {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+/* ########## testimonial-gallary ############# */
+.testimonial-gallary--section {
+  background-color: #fdf2e9;
+  padding: 1.2rem;
+}
+.gallary-img {
+  width: 100%;
+  transition: all 0.6s;
+}
+figure {
+  overflow: hidden;
+}
+.gallary-img:hover {
+  transform: scale(1.1);
+}
+.grid-gallary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.grid-gap {
+  align-items: center;
+  gap: 2.4rem;
+}
+.author-img {
+  width: 30%;
+  border-radius: 50%;
+}
+.author-quote {
+  font-size: 1.7rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+.testimonial-column {
+  padding: 6.4rem;
+}
+.grid-testimonial {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.6rem;
+  row-gap: 4.6rem;
+}
+.gallary-column {
+  align-self: center;
+}
+.author {
+  font-size: 1.6rem;
+  color: #888;
+}
+
+/* ########## price ############# */
+.price-section {
+  padding: 9.6rem 0rem;
+}
+.price-box {
+  border: 0.2rem solid #fdf2e9;
+  padding: 6.4rem 4.8rem;
+  width: 75%;
+  border-radius: 1.8rem;
+  color: #555;
+}
+.price-box:last-child {
+  position: relative;
+  background-color: #fdf2e9;
+  overflow: hidden;
+}
+.starter {
+  justify-self: flex-end;
+}
+/* .grid-gap {
+  column-gap: 6.4rem;
+} */
+.price-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #cf711f;
+  margin-bottom: 3.2rem;
+  text-transform: uppercase;
+}
+.price {
+  display: inline-block;
+  font-size: 6.2rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+.price-description {
+  font-size: 1.6rem;
+  margin-bottom: 5.2rem;
+  color: #777;
+}
+.price-detail {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  font-size: 1.8rem;
+  margin: 0 0 6.4rem 3.2rem;
+}
+.price-detail li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.dollar {
+  font-size: 3.2em;
+}
+.price-box:last-child::before {
+  content: "best value";
+  display: block;
+  color: #333;
+  font-size: 1.4rem;
+  background-color: #ffd43b;
+  text-transform: uppercase;
+  padding: 1rem 6.4rem;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  right: -5rem;
+  top: 4rem;
+  transform: rotate(45deg);
+}
+
+.feature-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6.4rem;
+}
+.feature-heading {
+  margin-bottom: 9.6rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #666;
+}
+.img-box {
+  background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.svg-icon {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+.feature-description {
+  font-size: 1.7rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+.tick {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* ########## ctn ############# */
+.ctn-section {
+  padding: 3.2rem 0 12.8rem;
+}
+.sign-up-box {
+  padding: 6.4rem;
+}
+
+.ctn-img {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.35),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url("eating.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.4rem;
+  row-gap: 1.6rem;
+}
+.container-color {
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 1.8rem 5rem 0 rgba(0, 0, 0, 0.16);
+}
+
+.ctn-text {
+  font-size: 1.8em;
+  color: #45260a;
+  line-height: 1.7;
+  margin-bottom: 3.6rem;
+}
+
+label {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+.heading-color {
+  color: #45260a;
+}
+input,
+select {
+  border: none;
+  font-size: 1.8rem;
+  padding: 1.4rem;
+  border-radius: 0.8rem;
+  width: 100%;
+}
+.quest-form,
+.email-form,
+.name-form {
+  width: 100%;
+}
+.btn-action {
+  border: none;
+  background-color: #45260a;
+  padding: 1.4rem;
+  align-self: end;
+  font-weight: 700;
+}
+.btn-action:hover {
+  background-color: #fff;
+  color: #333;
+}
+.sign-up-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+/* ########## footor ############# */
+
+.footer {
+  padding: 12.8rem 0rem;
+  border-top: 1px solid #eee;
+}
+.nav-heading {
+  font-size: 1.8rem;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.nav-link-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.nav-links:link,
+.nav-links:visited {
+  text-decoration: none;
+  color: #777;
+  font-size: 1.6rem;
+  transition: all 0.3s;
+}
+.nav-links:hover,
+.nav-links:active {
+  color: #555;
+}
+.contact-address {
+  font-style: normal;
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 3.2rem;
+  line-height: 1.6;
+}
+.footer-logo-copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.copyright {
+  color: #777;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-top: auto;
+}
+.social-media {
+  display: flex;
+  gap: 0.4rem;
+}
+.footer-grid {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  column-gap: 6.4rem;
+  row-gap: 80;
+}
+/* ########### at 1232px ######### */
+@media (max-width: 78em) {
+  /* .primary-heading {
+    font-size: 4.4rem;
+  }
+ 
+  .image-box img {
+    width: 90%;
+  } */
+  .hero-inner-box {
+    gap: 4.8rem;
+  }
+
+  /* .image-box img {
+    width: 90%;
+  } */
+}
+
+/* ########### at 1188px ######### */
+
+@media (max-width: 74.25em) {
+  html {
+    font-size: 56.25%;
+  }
+  .secondary-heading {
+    font-size: 3.6rem;
+  }
+  .teritary-heading {
+    font-size: 2.4rem;
+  }
+}
+
+/* ########### at 1070px ######### */
+@media (max-width: 67em) {
+  html {
+    font-size: 50%;
+  }
+  .grid {
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+  }
+  .primary-heading {
+    font-size: 4.4rem;
+  }
+  .feature-img {
+    height: 2.4rem;
+  }
+  .grid-gallary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .meal-discription {
+    margin: 3.2rem;
+  }
+  .price-box {
+    width: 85%;
+  }
+  .footer-grid {
+    gap: 4.8rem;
+  }
+}
+/* ########### at 944px ######### */
+
+@media (max-width: 60em) {
+  .hero-inner-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-link-box,
+  .customer-photos {
+    justify-content: center;
+  }
+  .image-box img {
+    width: 70%;
+  }
+
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease-out;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 6;
+    transform: translateX(100%);
+  }
+  .navigation {
+    margin-top: 12.8rem;
+    flex-direction: column;
+  }
+  .nav-link:link,
+  .nav-link:visited {
+    font-size: 2.4rem;
+  }
+
+  .btn--free:link,
+  .btn--free:visited {
+    font-size: 2.4rem;
+    padding: 1.2rem 1.8rem;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  .nav {
+    position: relative;
+  }
+  .open-nav .nav-bar {
+    transition: transform 0.4s;
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .open-nav .close-icon {
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+    display: block;
+  }
+  .testimonial-gallary--section .grid-col-2 {
+    grid-template-columns: 1fr;
+  }
+  .grid-gallary {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ########### at 832px ######### */
+@media (max-width: 52em) {
+  .feature-img {
+    height: 1.8rem;
+  }
+  .how-number {
+    font-size: 8rem;
+  }
+  .grid {
+    column-gap: 4rem;
+    row-gap: 8rem;
+  }
+  .meal-discription {
+    margin: 1.8rem;
+  }
+  .price-box {
+    border: 0.2rem solid #fdf2e9;
+    padding: 6.4rem 4.8rem;
+    width: 97%;
+    border-radius: 1.8rem;
+    color: #555;
+  }
+  .feature-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1.8rem;
+    row-gap: 4.8rem;
+  }
+  .nav-footer {
+    grid-row: 1;
+    grid-column: span 2;
+    gap: 3.2rem;
+    margin-bottom: 3.2rem;
+  }
+  .footer-logo-copyright,
+  .contacts {
+    grid-row: 2;
+    grid-column: span 3;
+  }
+  .btn-action {
+    margin-top: 2.4rem;
+  }
+}
+
+/* ########### at 736px ######### */
+
+@media (max-width: 46em) {
+  .grid-col-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .diets {
+    grid-column: span 2;
+    justify-self: center;
+  }
+  .price-box {
+    width: 100%;
+    padding: 6.4rem 0.8rem;
+  }
+
+  .price-detail {
+    margin: 0 0 6.4rem 2.4rem;
+  }
+  .featured-list {
+    gap: 2.4rem;
+  }
+  .sign-up-box {
+    padding: 4.8rem;
+  }
+}
+
+/* ########### at 530px ######### */
+@media (max-width: 33em) {
+  .grid-gallary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-col-3 {
+    grid-template-columns: 1fr;
+  }
+  .grid-col-2 {
+    grid-template-columns: 1fr;
+    row-gap: 1.8rem;
+  }
+  .diets {
+    grid-column: span 1;
+    justify-self: center;
+  }
+  .meal-discription {
+    margin: 3.2rem 4.8rem;
+  }
+  .how-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+  .how-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+  .how-text-discription {
+    margin-bottom: 6.4rem;
+  }
+  .how-section {
+    /* background-color: #fdf2e9; */
+    padding: 3.2rem 3.2rem;
+  }
+  .meal-section {
+    /* background-color: #fdf2e9; */
+    padding: 3.2rem 3.2rem;
+  }
+  .feature-img {
+    height: 1.4rem;
+  }
+  .featured-list {
+    gap: 1.2rem;
+  }
+  .photo-text {
+    width: 30%;
+  }
+  .featured-heading {
+    font-size: 1rem;
+  }
+  .hero-link-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-section {
+    padding: 8rem 0.8rem;
+  }
+  .grid-testimonial {
+    grid-template-columns: 1fr;
+  }
+  .feature-box {
+    grid-template-columns: 1fr;
+  }
+  .sign-up-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .ctn-img {
+    height: 32rem;
+    grid-row: 1;
+  }
+  .price-detail {
+    width: 27rem;
+    margin: 0 auto 6.4rem auto;
+  }
+  .price-section {
+    padding: 9.6rem 2.4rem;
+  }
+  .hero-section {
+    padding: 8rem 0.8rem;
+  }
+  .sign-up-box {
+    padding: 3.2rem;
+  }
+  .secondary-heading {
+    font-size: 2.8rem;
+    margin-bottom: 2.4rem;
+  }
+  .teritary-heading {
+    font-size: 2.4rem;
+  }
+  .primary-heading {
+    font-size: 3.6rem;
+  }
+  .testimonial-column {
+    padding: 3.2rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1.8rem 4.8rem;
+  }
+  .sign-up-box {
+    padding: 2.4rem;
+  }
+}
+
+/* SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+   </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div  class="nav-box">
+        <a href="#"> <img class="logo-img" src="omnifood-logo.png" alt="omnifood logo"></a>
+    <nav class="nav-bar">
+      <ul class="navigation">
+        <li><a class="nav-link"  href="#how"> How it works</a></li>
+        <li><a  class="nav-link"href="#meals"> Meals</a></li>
+        <li><a class="nav-link" href="#testimonials"> testimonials</a></li>
+        <li><a class="nav-link" href="#price"> Pricing</a></li>
+        <li><a class=" btn--free btn" href="#ctn"> Try for free</a></li>
+      </ul>
+       <img class="close-icon" src="close-circle-svgrepo-com.svg" alt="">
+    </nav>
+
+      <img class="menu-icon" src="menu-burger-horizontal-svgrepo-com.svg" alt="">
+     
+    </div>
+  </div>
+  </header>
+    <main>
+
+      
+    <section class="hero-section">
+      <div class="hero-inner-box">
+        <div class="hero-text-box">
+          <h1 class="primary-heading">
+            A healthy meal delivered to your door, every single day
+          </h1>
+          <p class="hero--text">
+            The smart 365-days-per-year food subscription that will make you eat
+            healthy again. Tailored to your personal tastes and nutritional needs.
+            <!--  We have delivered 250,000+ meals last year! -->
+          </p>
+          <div class="hero-link-box">
+            <a href="#ctn" class="btn btn--main">Start eating well</a>
+            <a href="#how" class="btn btn--less">Learn more &dArr;</a>
+          </div>
+
+          <div class = "customer-photos">
+             <div>
+            <img src="customer-1.jpg" class="cust-photos" alt="a customer photo">
+            <img src="customer-2.jpg" class="cust-photos" alt="a customer photo">
+            <img src="customer-3.jpg" class="cust-photos" alt="a customer photo">
+            <img src="customer-4.jpg" class="cust-photos" alt="a customer photo">
+            <img src="customer-5.jpg" class="cust-photos" alt="a customer photo">
+            <img src="customer-6.jpg" class="cust-photos" alt="a customer photo">
+            </div>
+            <span class="photo-text"><span class="number">250,000+</span> meals delivered last year!</span>
+            
+          </div>
+        </div>
+        <div class="image-box">
+        <img src="hero.png" alt="a girl eating,some foods" />
+      </div>
+    </section>
+      <section class="featured-section">
+        <div class="container">
+       <h2 class="featured-heading">as featured in</h2>
+       <div class="featured-list">
+        <img class="feature-img" src="techcrunch.png" alt="techcrunch">
+      
+        <img class="feature-img" src="business-insider.png" alt="business insider">
+        <img class="feature-img" src="the-new-york-times.png" alt="the new york times.png">
+        <img class="feature-img" src="forbes.png" alt="forbes">
+        <img class="feature-img" src="usa-today.png" alt="usa-today">
+       </div>
+      </div>
+      </section>
+      <section id="how" class="how-section">
+        <div class="container">
+        <p class="subheading subheading-primeColor">how it works</p>
+        <h2 class="secondary-heading ">
+          Your daily dose of health in 3 simple steps
+        </h2>
+        <div class="grid grid-col-2">
+        
+        <div class="how-text">
+          <p  class="how-number">01</p>
+          <h3 class="teritary-heading ">Tell us what you like (and what not)</h3>
+        <p class="how-text-discription">Never again waste time thinking about what to eat! Omnifood AI will create a 100% personalized weekly meal plan just for you. It makes sure you get all the nutrients and vitamins you need, no matter what diet you follow!
+        </p></div>
+        <div class="how-img-box">
+        <img class="how-img" src="app-screen-1.png" alt="app screen 1">
+      </div>
+      <div div class="how-img-box">
+        <img class="how-img"  src="app-screen-2.png" alt="">
+      </div>
+         <div class="how-text">
+          <p  class="how-number">02</p>
+          <h3 class="teritary-heading "> Approve your weekly meal plan</h3>
+        <p class="how-text-discription">
+          Once per week, approve the meal plan generated for you by Omnifood AI. You can change ingredients, swap entire meals, or even add your own recipes.
+        </p></div>
+      
+        <div class="how-text">
+          <p class="how-number">03</p>
+          <h3 class="teritary-heading ">Receive meals at convenient time</h3>
+        <p class="how-text-discription"> Best chefs in town will cook your selected meal every day, and we will deliver it to your door whenever works best for you. You can change delivery schedule and address daily!
+        </p>
+      </div>
+      <div div class="how-img-box">
+      <img class="how-img" src="app-screen-3.png" alt="">
+    </div>
+     </div>
+    </div>
+      </section>
+      <section id="meals" class="meal-section">
+      <div class="container ">
+        <p class="subheading centering">meals</p>
+        <h2 class="secondary-heading centering">Omnifood AI chooses from 5,000+ recipes</h2>
+      <div class="grid grid-col-3">
+        <div class="meal--box">
+            <img  class="meal-img" src="meal-1.jpg" alt="">
+          <div class="meal-discription">
+            <p class="tag tag--green">Vegetarian</p>
+            <h2 class="quaternary-heading">Japanese Gyozas</h2>
+            <ul class="details">
+              <li> <img class="svg-logo" src="kitchen-machine-scale-svgrepo-com.svg" alt=""><span>650 Calories</span> </li>
+              <li><img class="svg-logo" src="and-fork-kitchen-svgrepo-com.svg" alt=""><span> NutriScore &REG; 74</span></li>
+              <li><img class="svg-logo" src="extractor-fan-kitchen-svgrepo-com.svg" alt="">
+              <span>4.9 rating (537)</span> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="meal--box">
+            <img class="meal-img" src="meal-2.jpg" alt="">
+          <div class="meal-discription">
+            <span class="tag tag--green ">Vegan</span><span class="tag tag--yellow
+              "> Paleo</span>
+            <h2 class="quaternary-heading"> Avocado Salad</h2>
+            <ul class="details">
+              <li><img class="svg-logo" src="kitchen-machine-scale-svgrepo-com.svg" alt=""><span>400 Calories</span> </li>
+              <li><img class="svg-logo" src="and-fork-kitchen-svgrepo-com.svg" alt=""><span> NutriScore &REG; 92</span></li>
+              <li><img class="svg-logo" src="extractor-fan-kitchen-svgrepo-com.svg" alt=""><span>4.8 rating (441)</span> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="diets">
+            <h2 class="teritary-heading">Works with any diet:</h2>
+            <ul class="details detail-2 ">
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""><span> Vegetarian</span></li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""> <span>Vegan</span> </li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""> <span>Pescatarian</span> </li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""><span>Gluten-free</span> </li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""><span>Lactose-free</span> </li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""><span>Keto</span> </li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""><span>Paleo</span> </li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""><span>Low FODMAP</span> </li>
+              <li><img class="tick" src="tick-svgrepo-com.svg" alt=""><span>Kid-friendly</span> </li>
+            </ul>
+        </div>
+        </div>
+        <div class="centering">
+        <a class="meal-link" href="#">See all recipes &rarr;</a>
+      </div>
+        </div>
+        </section>
+
+        <section id="testimonials" class="testimonial-gallary--section">
+         
+            <div class="grid grid-col-2 grid-gap">
+              <div class="testimonial-column">
+               <span class="subheading">TESTIMONIALS</span>
+               <h2 class="secondary-heading">Once you try it, you can't go back</h2>
+              <div class="grid-testimonial">
+             <div class="testimonial">
+              <img class="author-img" src="dave.jpg" alt="">
+              <blockquote class="author-quote">Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.</blockquote>
+              <p class="author">&dash; Dave Bryson</p>
+             </div>
+             <div class="testimonial">
+              <img class="author-img" src="ben.jpg" alt="">
+              <blockquote class="author-quote">
+                The AI algorithm is crazy good, it chooses the right meals for me every time. It's amazing not to worry about food anymore! 
+              </blockquote>
+              <p class="author">&dash; Ben Hadley</p>
+             </div>
+             <div class="testimonial">
+              <img class="author-img" src="steve.jpg" alt="">
+              <blockquote class="author-quote">Omnifood is a life saver! I just started a company, so there's no time for cooking. I couldn't live without my daily meals now!</blockquote>
+              <p class="author">&dash; Steve Miller</p>
+             </div>
+             <div class="testimonial">
+              <img class="author-img" src="hannah.jpg" alt="">
+              <blockquote class="author-quote">I got Omnifood for the whole family, and it frees up so much time! Plus, everything is organic and vegan and without plastic.
+              </blockquote>
+              <p class="author">&dash; Hannah Smith</p>
+             </div>
+            </div>
+          </div>
+
+             
+                         
+
+              <div class="gallary-column">
+                <div class="grid-gallary">
+                  <figure><img class="gallary-img" src="gallery-1.jpg" alt=""></figure>
+                  <figure><img class="gallary-img" src="gallery-2.jpg" alt=""></figure>
+                  <figure><img class="gallary-img" src="gallery-3.jpg" alt=""></figure>
+                  <figure><img class="gallary-img" src="gallery-4.jpg" alt=""></figure>
+                  <figure><img class="gallary-img" src="gallery-5.jpg" alt=""></figure>
+                  <figure><img class="gallary-img" src="gallery-6.jpg" alt=""></figure>
+                  <figure><img class="gallary-img" src="gallery-7.jpg" alt=""></figure>
+                  <figure> <img class="gallary-img" src="gallery-8.jpg" alt=""></figure>
+                  <figure><img class="gallary-img" src="gallery-9.jpg" alt=""></figure>
+                  <figure> <img class="gallary-img" src="gallery-10.jpg" alt=""></figure>
+                   <figure><img class="gallary-img" src="gallery-11.jpg" alt=""></figure>
+                    <figure><img class="gallary-img" src="gallery-12.jpg" alt=""></figure>
+                    
+                </div>
+              </div>
+    
+        </section>
+        <section id="price" class="price-section">
+
+          <div class="container">
+            <span class="subheading">pricing</span>
+            <h2 class="secondary-heading">Eating well without breaking the bank</h2>
+            <div class="grid grid-col-2 grid-gap">
+              <div class="price-box starter">
+                <div class="centering">
+                <p class="price-heading">Starter</p>
+                <span class="dollar">$&nbsp;</span><span class ="price">399</span>
+                 <p class="price-description">per month.That's just $13 per meal! </p>
+                </div>
+                 <ul class="price-detail">
+                  <li class="price-list"><img class="tick" src="tick-svgrepo-com.svg" alt=""> <span>1 meal per day</span> </li>
+                  <li class="price-list"><img class="tick" src="tick-svgrepo-com.svg" alt=""><span> Order from 11am to 9pm</span> </li>
+                  <li class="price-list"><img class="tick" src="tick-svgrepo-com.svg" alt=""> <span> Delivery is free</span>
+                  </li>
+                  <li class="price-list"><img class="tick" src="cancel-close-delete-svgrepo-com.svg" alt=""> 
+                  </li>
+                 </ul>
+                 <div class="centering">
+                 <a class="btn" href="#ctn">Start eating well</a>
+                </div>
+              </div>
+              <div class="price-box">
+                  <div class="centering">
+                <p class="price-heading">Complete</p>
+                <span class="dollar">$&nbsp;</span><span class ="price">649</span>
+                <p class="price-description">per month.That's just $13 per meal! </p>
+                    </div>
+                 <ul class="price-detail">
+                  <li class="price-list"><img class="tick" src="tick-svgrepo-com.svg" alt=""> <span>2 meal per day</span> </li>
+                  <li class="price-list"><img class="tick" src="tick-svgrepo-com.svg" alt="">
+                    <span> Order 24/7</span></li>
+                  <li class="price-list"><img class="tick" src="tick-svgrepo-com.svg" alt="">Delivery is free
+                  </li>
+                  <li class="price-list"><img class="tick" src="tick-svgrepo-com.svg" alt=""> <span>Get access to latest recipes</span> </li>
+                 </ul>
+                 <div class="centering">
+                 <a class="btn" href="#ctn">Start eating well</a>
+                </div>
+             </div>    
+            </div>
+            <!-- <div class="container"> -->
+            <h2 class=" feature-heading centering">Prices include all applicable taxes. You can cancel at any time. Both plans include the following: </h2>
+            <div class="feature-box">
+              <div class="feature">
+                 <div class="img-box">
+                 <img class="svg-icon" src="discount-promo-ecommerce-svgrepo-com.svg" alt=""></div>
+                <h3 class="quaternary-heading">Never cook again!</h3>
+                <p class="feature-description">Our subscriptions cover 365 days per year, even including major holidays.</p>
+              </div>
+              <div class="feature">
+                <div class="img-box">
+                <img class="svg-icon" src="craft-compass-tool-svgrepo-com.svg" alt=""></div>
+                <h3 class="quaternary-heading">Local and organic</h3>
+                  <p class="feature-description">Our cooks only use local, fresh, and organic products to prepare your meals.</p>
+              </div>
+              <div class="feature">
+                 <div class="img-box">
+               <img class="svg-icon" src="craft-wood-chisel-svgrepo-com.svg" /></div>
+              <h3 class="quaternary-heading">No waste</h3>
+               <p class="feature-description">All our partners only use reusable containers to package all your meals. </p>
+              </div>
+              <div class="feature">
+                 <div class="img-box">
+                 <img class="svg-icon" src="craft-orgami-folding-paper-svgrepo-com.svg" alt=""></div>
+                <h3 class="quaternary-heading">Pause anytime</h3>
+                 <p class="feature-description"> Going on vacation? Just pause your subscription, and we refund unused days.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <section id="ctn" class="ctn-section">
+        <div class="container">
+         <div class="sign-up-grid container-color">
+          <div class="sign-up-box">
+            <h2 class="secondary-heading heading-color margin-buttom-md">
+              Get your first meal for free!
+            </h2>
+            <p class="ctn-text">
+              Healthy, tasty and hassle-free meals are waiting for you. Start eating well today. You can cancel or pause anytime. And the first meal is on us!
+            </p>
+            <form class="form-grid" action="">
+              <div class="name-form">
+              <label for="full-name">Full Name</label>
+              <input id="full-name" type="text" placeholder="john smith">
+            </div>
+             <div class="email-form">
+              <label for="email">Email address</label>
+              <input id="email" type="text" placeholder="me@example.com">
+             </div>
+             <div class="quest-form">
+              <label for="quest">Where did you hear from us?</label>
+               <select name="quest-form" id="quest">
+                <option value="">please choose one option:</option>
+                <option value="friends">friends and family</option>
+                <option value="youtube">youtube video</option>
+                <option value="podcast">podcast</option>
+                <option value="facebookAd">facebook ad</option>
+                <option value="other">other</option>
+               </select>
+             </div>
+        
+                <button class="btn btn-action">Sign up now</button>
+
+            </form>
+
+          </div>
+           <div class="ctn-img" role="img" aria-label="a women eating"> </div>
+          </div>
+        </div>
+        </section>
+  </main>
+  <footer class="footer">
+    
+    <div class="grid footer-grid container">
+      <div class="footer-logo-copyright">
+        
+        <a class="social-logo" href="#"><img class="logo-img" src="omnifood-logo.png" alt="omnifood logo"></a>
+        <div class="social-media">
+       <a class="social-logo" href="www.facebook.com"><img src="facebook-internet-media-svgrepo-com.svg" alt=""></a>
+       <a class="social-logo" href="#"><img src="instagram-internet-media-svgrepo-com (1).svg" alt=""></a>
+       <a class="social-logo" href="#"><img src="internet-linkedln-media-svgrepo-com.svg" alt=""></a>
+       <a class="social-logo" href="#"><img src="internet-media-social-4-svgrepo-com.svg" alt=""></a></div>
+        <p class="copyright">Copyright © 2027 by Omnifood, Inc. All rights reserved.</p>
+    </div>
+    <div class="contacts">
+      <h2 class = "nav-heading">Contact us</h2>
+      <address class="contact-address">623 Harrison St., 2nd Floor, San Francisco, CA 94107</address>
+      <a class="nav-links margin-buttom-sm" href="tel:415-201-6370">415-201-6370</a>
+      <a class="nav-links " href="mailto:hello@omnifood.com">hello@omnifood.com</a>
+    </div>
+    <nav class="nav-footer">
+      <h1 class = "nav-heading">Account</h1>
+      <ul class="nav-link-list">
+        <li><a class="nav-links" href="#"> Create account</a></li>
+        <li><a class="nav-links" href="#">Sign in</a></li>
+        <li><a class="nav-links" href="#">iOS app</a></li>
+        <li><a class="nav-links" href="#"> Android app</a></li>
+      </ul>
+    </nav>
+    
+    <nav class="nav-footer">
+      <h1 class = "nav-heading">Company</h1>
+      <ul  class="nav-link-list">
+        <li><a class="nav-links" href="#">About Omnifood</a></li>
+        <li><a class="nav-links" href="#">For Business</a></li>
+        <li><a class="nav-links" href="#">Cooking partners</a></li>
+        <li><a class="nav-links" href="#">Careers</a></li>
+      </ul>  
+    </nav>
+   
+  
+    <nav class="nav-footer">
+      <h1 class = "nav-heading">Resources</h1>
+      <ul class="nav-link-list">
+        <li><a class="nav-links" href="#">  Recipe directory</a></li>
+        <li><a class="nav-links" href="#">Help center</a></li>
+        <li><a class="nav-links" href="#">Privacy & terms</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <script>
+  const menu = document.querySelector(".menu-icon");
+const close = document.querySelector(".close-icon");
+const body = document.body;
+menu.addEventListener("click", function () {
+  document.querySelector(".nav").classList.add("open-nav");
+});
+close.addEventListener("click", function () {
+  document.querySelector(".nav").classList.remove("open-nav");
+});
+
+body.addEventListener("click", function (e) {
+  // console.log(e.target.tagName);
+  // console.log(e.target.className);
+  e.preventDefault();
+  if (e.target.closest("a")) {
+    if (e.target.closest("a").getAttribute("href") === "#") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      if (e.target.getAttribute("href").startsWith("#")) {
+        const section = document.querySelector(
+          `${e.target.getAttribute("href")}`
+        );
+        const y1 = window.pageYOffset;
+        const y2 = section.getBoundingClientRect().top;
+        document.querySelector(".nav").classList.remove("open-nav");
+        window.scrollTo({
+          top: y1 + y2,
+          behavior: "smooth",
+        });
+        // section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
+});
+
+// document.addEventListener("scroll", function () {
+//   if (window.pageYOffset < 715) {
+//     document.body.classList.remove("sticky");
+//   }
+//   if (window.pageYOffset >= 715) {
+//     document.body.classList.add("sticky");
+//   }
+// });
+
+const hero = document.querySelector(".hero-section");
+const observer = new IntersectionObserver(
+  function (ent) {
+    console.log(ent[0]);
+    console.log(ent[1]);
+    if (!ent[0].isIntersecting) {
+      document.body.classList.add("sticky");
+    }
+    if (ent[0].isIntersecting) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    // view port
+    root: null,
+    threshold: 0.1,
+  }
+);
+observer.observe(hero);
+  </script>
+  </body>
+</html>
